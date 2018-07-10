@@ -1,0 +1,3 @@
+[submodule "contracts/utils/oraclize"]
+	path = contracts/utils/oraclize
+	url = https://github.com/oraclize/ethereum-api.git

@@ -1,0 +1,33 @@
+{
+  "name": "enq-ico",
+  "version": "1.2.1",
+  "description": "ENQ ICO Smart Contracts",
+  "author": "GeekHack",
+  "license": "AGPL-3.0-or-later",
+  "main": "truffle-config.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/solium -d contracts",
+    "lint:fix": "./node_modules/.bin/solium -d contracts --fix",
+    "coverage": "./node_modules/.bin/solidity-coverage",
+    "compile": "./node_modules/.bin/truffle compile",
+    "test": "./node_modules/.bin/truffle test",
+    "console": "./node_modules/.bin/truffle console",
+    "migrate": "./node_modules/.bin/truffle migrate",
+    "build": "./node_modules/.bin/sol-merger \"./contracts/*.sol\" ./build/dist",
+    "postinstall": "npm audit fix"
+  },
+  "dependencies": {
+    "config.json": "0.0.4",
+    "dotenv": "^6.0.0",
+    "multisig-wallet-gnosis": "file:../MultiSigWallet",
+    "openzeppelin-solidity": "^1.11.0-rc.1",
+    "truffle": "^4.1.13",
+    "truffle-hdwallet-provider": "^0.0.5"
+  },
+  "devDependencies": {
+    "sol-merger": "^0.1.2",
+    "solhint": "^1.2.1",
+    "solidity-coverage": "^0.5.5",
+    "solium": "^1.1.7"
+  }
+}

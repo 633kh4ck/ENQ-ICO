@@ -1,0 +1,37 @@
+{
+	"wallet": {
+		"useDeployed": false,
+		"address": "0x0",
+		"args": [
+			[
+				"0x0",
+				"0x0"
+			],
+			"",
+			""
+		]
+	},
+	"token": {
+		"useDeployed": false,
+		"address": "0x0",
+		"args": [
+			"0x0"
+		]
+	},
+	"ico": {
+		"useDeployed": false,
+		"address": "0x0",
+		"args": [
+			"",
+			"0x0",
+			"0x0",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	}
+}
