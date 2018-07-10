@@ -80,3 +80,4 @@ Thumbs.db
 /test/**/*.*
 config*.json
 !config.example.json
+!README.md
