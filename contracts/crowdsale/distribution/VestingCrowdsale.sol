@@ -29,7 +29,9 @@ contract VestingCrowdsale is Crowdsale, Ownable {
 		_setVestingStart(_start);
 		_setVestingCliff(_cliff);
 		_setVestingDuration(_duration);
-		_setVestingRevocable(_revocable);
+		if (_revocable) {
+			_setVestingRevocable(_revocable);
+		}
 	}
 
 	/**
