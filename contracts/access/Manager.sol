@@ -7,7 +7,8 @@ import "openzeppelin-solidity/contracts/ownership/rbac/RBAC.sol";
 
 /**
  * @title Manager
- * @dev The Manager contract has a manager list of addresses, and provides basic authorization control functions.
+ * @dev The Manager contract has a manager list of addresses,
+ * and provides basic authorization control functions.
  * This simplifies the implementation of "manager permissions".
  */
 contract Manager is Ownable, RBAC {
@@ -33,7 +34,8 @@ contract Manager is Ownable, RBAC {
 	/**
 	 * @dev add an address to the manager list
 	 * @param _operator address
-	 * @return true if the address was added to the manager list, false if the address was already in the manager list
+	 * @return true if the address was added to the manager list,
+	 * false if the address was already in the manager list
 	 */
 	function addAddressToManagerList(address _operator)	public onlyOwner {
 		addRole(_operator, ROLE_MANAGER);

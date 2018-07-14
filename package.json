@@ -20,7 +20,7 @@
     "config.json": "0.0.4",
     "dotenv": "^6.0.0",
     "multisig-wallet-gnosis": "file:../MultiSigWallet",
-    "openzeppelin-solidity": "^1.11.0-rc.1",
+    "openzeppelin-solidity": "^1.11.0",
     "truffle": "^4.1.13",
     "truffle-hdwallet-provider": "^0.0.5"
   },
@@ -28,6 +28,6 @@
     "sol-merger": "^0.1.2",
     "solhint": "^1.2.1",
     "solidity-coverage": "^0.5.5",
-    "solium": "^1.1.7"
+    "solium": "^1.1.8"
   }
 }

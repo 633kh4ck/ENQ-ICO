@@ -7,11 +7,11 @@ import "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol
 import "openzeppelin-solidity/contracts/crowdsale/validation/IndividuallyCappedCrowdsale.sol"; // solium-disable-line max-len
 import "openzeppelin-solidity/contracts/crowdsale/validation/WhitelistedCrowdsale.sol"; // solium-disable-line max-len
 import "openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol"; // solium-disable-line max-len
+import "openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
 import "./crowdsale/distribution/VestingCrowdsale.sol";
 import "./crowdsale/price/FiatCrowdsale.sol";
 import "./crowdsale/validation/PausableCrowdsale.sol";
 import "./crowdsale/validation/ManagedCrowdsale.sol";
-import "./Token.sol";
 /* solhint-enable max-line-length */
 
 /**
@@ -23,7 +23,7 @@ contract ICO is Crowdsale, MintedCrowdsale, CappedCrowdsale, IndividuallyCappedC
 	constructor(
 		uint256 _rate,
 		address _wallet,
-		Token _token,
+		address _token,
 		uint256 _cap,
 		uint256 _openingTime,
 		uint256 _closingTime,
@@ -34,7 +34,7 @@ contract ICO is Crowdsale, MintedCrowdsale, CappedCrowdsale, IndividuallyCappedC
 	)
 	public
 	payable
-	Crowdsale(_rate, _wallet, _token)
+	Crowdsale(_rate, _wallet, MintableToken(_token))
 	CappedCrowdsale(_cap)
 	TimedCrowdsale(_openingTime, _closingTime)
 	FiatCrowdsale(_url, _scale, _delay, 6000000000, 200000)
@@ -55,7 +55,8 @@ contract ICO is Crowdsale, MintedCrowdsale, CappedCrowdsale, IndividuallyCappedC
 	/**
 	* @dev add an address to the whitelist
 	* @param _operator address
-	* @return true if the address was added to the whitelist, false if the address was already in the whitelist
+	* @return true if the address was added to the whitelist, false if
+	* the address was already in the whitelist
 	*/
 	// solium-disable-next-line max-len
 	function managerAddAddressToWhitelist(address _operator) external onlyManager { // solhint-disable-line max-line-length
@@ -101,7 +102,7 @@ contract ICO is Crowdsale, MintedCrowdsale, CappedCrowdsale, IndividuallyCappedC
 	* @dev Extend parent behavior to transfer ownership of token & ether to wallet
 	*/
 	function finalization() internal {
-		Token(token).transferOwnership(wallet);
+		MintableToken(token).transferOwnership(wallet);
 		wallet.transfer(address(this).balance);
 		super.finalization();
 	}

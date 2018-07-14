@@ -158,7 +158,7 @@ contract VestingCrowdsale is Crowdsale, Ownable {
 		address vestingWallet_ = getVestingWallet(_beneficiary);
 		if (vestingWallet_ == address(0)) {
 			// solium-disable-next-line max-len
-			vestingWallet_ = new TokenVesting(_beneficiary, vestingCliff, vestingStart, vestingDuration, vestingRevocable); // solhint-disable-line max-line-length
+			vestingWallet_ = new TokenVesting(_beneficiary, vestingStart, vestingCliff, vestingDuration, vestingRevocable); // solhint-disable-line max-line-length
 			_setVestingWallet(_beneficiary, vestingWallet_);
 			emit VestingWalletCreated(_beneficiary, vestingWallet_);
 		}
