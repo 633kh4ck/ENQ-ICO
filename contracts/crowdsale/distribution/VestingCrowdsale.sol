@@ -9,7 +9,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/TokenVesting.sol";
  * @title Vesting Crowdsale Smart Contract
  * @author GeekHack t.me/GeekHack
  */
-contract VestingCrowdsale is Crowdsale, Ownable {
+contract VestingCrowdsale is Ownable, Crowdsale {
 	uint256 public vestingStart;
 	uint256 public vestingCliff;
 	uint256 public vestingDuration;
@@ -18,21 +18,21 @@ contract VestingCrowdsale is Crowdsale, Ownable {
 
 	event VestingWalletCreated(address beneficiary, address wallet);
 
-	constructor(
+	/* constructor(
 		uint256 _start,
 		uint256 _cliff,
-		uint256 _duration,
-		bool _revocable
-	)
-	public
-	{ // solhint-disable-line bracket-align
-		_setVestingStart(_start);
-		_setVestingCliff(_cliff);
+		uint256 _duration,						//--######################################
+		bool _revocable							//	##									##
+	)											//	##		original implementation		##
+	public										//	##		  refactoring due to		##
+	{ // solhint-disable-line bracket-align		//	##	CompilerError: Stack too deep	##
+		_setVestingStart(_start);				//	##									##
+		_setVestingCliff(_cliff);				//--######################################
 		_setVestingDuration(_duration);
 		if (_revocable) {
 			_setVestingRevocable(_revocable);
 		}
-	}
+	} */
 
 	/**
 	 * @dev external setter for vesting start
@@ -52,7 +52,7 @@ contract VestingCrowdsale is Crowdsale, Ownable {
 
 	/**
 	 * @dev external setter for vesting duration
-	 * @param _duration duration in seconds of the period in which the tokens will vest
+	 * @param _duration in seconds of the period in which the tokens will vest
 	 */
 	function setVestingDuration(uint256 _duration) external onlyOwner {
 		_setVestingDuration(_duration);
@@ -93,7 +93,7 @@ contract VestingCrowdsale is Crowdsale, Ownable {
 	 */
 	// solium-disable-next-line max-len
 	function hasVestingWallet(address _beneficiary) public view returns (bool) { // solhint-disable-line max-line-length
-		return (getVestingWallet(_beneficiary) != address(0));
+		return getVestingWallet(_beneficiary) != address(0);
 	}
 
 	/**
@@ -136,13 +136,14 @@ contract VestingCrowdsale is Crowdsale, Ownable {
 	}
 
 	/**
-	 * @dev external setter for vesting wallet
+	 * @dev internal setter for vesting wallet
 	 * @param _beneficiary token purchaser
 	 * @param _vesting     vesting wallet
 	 */
 	// solium-disable-next-line max-len
 	function _setVestingWallet(address _beneficiary, address _vesting) internal { // solhint-disable-line max-line-length
 		require(_beneficiary != address(0));
+		require(_vesting != address(0));
 		require(!hasVestingWallet(_beneficiary));
 		
 		vestingWallets[_beneficiary] = _vesting;

@@ -8,7 +8,7 @@ import "openzeppelin-solidity/contracts/lifecycle/Pausable.sol";
  * @title Pausable Crowdsale Smart Contract
  * @author GeekHack t.me/GeekHack
  */
-contract PausableCrowdsale is Crowdsale, Pausable {
+contract PausableCrowdsale is Pausable, Crowdsale {
 	/**
 	* @dev Extend parent behavior requiring to be within not pause period
 	* @param _beneficiary Token purchaser

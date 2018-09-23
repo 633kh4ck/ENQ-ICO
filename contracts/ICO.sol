@@ -37,19 +37,50 @@ contract ICO is Crowdsale, MintedCrowdsale, CappedCrowdsale, IndividuallyCappedC
 	Crowdsale(_rate, _wallet, MintableToken(_token))
 	CappedCrowdsale(_cap)
 	TimedCrowdsale(_openingTime, _closingTime)
-	FiatCrowdsale(_url, _scale, _delay, 6000000000, 200000)
-	VestingCrowdsale(_closingTime, 300, _lockup, false)
+	FiatCrowdsale()
+	VestingCrowdsale()
 	{ // solhint-disable-line bracket-align, no-empty-blocks
+		_setFiatOraclizeQueryURL(_url);
+		if (_scale > 0) {
+			_setFiatScale(_scale);
+		}
+		if (_delay > 0) {
+			_setFiatOraclizeQueryDelay(_delay);
+		}
+		_setFiatOraclizeQueryGasPrice(6000000000);
+		_setFiatOraclizeQueryGasLimit(200000);
+		_updateFiatPrice(0);
 
+		/* _setVestingStart(_closingTime);
+		_setVestingCliff(60);
+		_setVestingDuration(_lockup); */
 	}
 
 	/**
 	* @dev Sets maximum contribution at a specific stage.
-	* @param _cap Limit for individual contribution
+	* @param _cap Limit for total contribution
 	*/
 	function setCap(uint256 _cap) external onlyOwner {
 		require(_cap > 0);
+		if (cap == _cap) revert();
 		cap = _cap;
+	}
+
+	/**
+	* @dev Sets crowdsale closing time.
+	* @param _closingTime (unix time stamp)
+	*/
+	function setClosingTime(uint256 _closingTime) external onlyOwner {
+		require(_closingTime >= openingTime);
+		if (closingTime == _closingTime) revert();
+		closingTime = _closingTime;
+	}
+
+	/**
+	* @dev Withdraw all ether to wallet.
+	*/
+	function withdrawBalance() external onlyOwner {
+		_withdrawBalance();
 	}
 
 	/**
@@ -99,11 +130,18 @@ contract ICO is Crowdsale, MintedCrowdsale, CappedCrowdsale, IndividuallyCappedC
 	}
 
 	/**
+	* @dev Withdraw all ether to wallet.
+	*/
+	function _withdrawBalance() internal {
+		wallet.transfer(address(this).balance);
+	}
+	
+	/**
 	* @dev Extend parent behavior to transfer ownership of token & ether to wallet
 	*/
 	function finalization() internal {
 		MintableToken(token).transferOwnership(wallet);
-		wallet.transfer(address(this).balance);
+		_withdrawBalance();
 		super.finalization();
 	}
 }

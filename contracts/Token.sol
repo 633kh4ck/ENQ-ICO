@@ -1,6 +1,5 @@
 pragma solidity 0.4.24;
 
-import "openzeppelin-solidity/contracts/token/ERC20/BurnableToken.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/CappedToken.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
 
@@ -8,7 +7,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
  * @title ENQ Token Smart Contract
  * @author GeekHack t.me/GeekHack
  */
-contract Token is BurnableToken, CappedToken, PausableToken {
+contract Token is CappedToken, PausableToken {
 	/* solhint-disable const-name-snakecase */
 	string public constant name = "Enecuum"; // solium-disable-line uppercase
 	string public constant symbol = "ENQ"; // solium-disable-line uppercase
