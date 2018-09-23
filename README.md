@@ -2,6 +2,8 @@ ENQ ICO Smart Contracts
 ===================
 ENQ ICO is based on the ERC20 token, [OpenZeppelin framework](https://github.com/OpenZeppelin/openzeppelin-solidity), [MultiSig Wallet (by Gnosis)](https://github.com/gnosis/MultiSigWallet) and some utilitarian contracts. All contracts use the latest stable version of the Solidity language (except dependencies, which we can't control) and have passed internal tests and audits.
 
+![ENQ](https://raw.githubusercontent.com/633kh4ck/ENQ-ICO/master/docs/diagram.png)
+
 ## Install
 
 ``` bash
@@ -15,17 +17,19 @@ $ npm install # Or yarn install
 ## Deploy
 
 ``` bash
-# configure your infura api key & mnemonic (if you want to deploy not only to dev network)
-$ mv env.example env # And edit env
+# configure your infura api key & ( mnemonic || ledger )
+$ cp env.example env
+$ nano env
 
 # configure your args (each network has separate config file)
+# all args are placed in order like constructors params
 $ cp config.example.json config.development.json # Or config.ropsten.json etc
 
 # compile project
 $ npm run compile # Or truffle compile (if truffle installed globally)
 
 # deploy contracts
-$ npm run migrate --network development # Or truffle migrate --network development, specify network
+$ npm run migrate -- --network development # Or truffle migrate --network development (specify network)
 ```
 
 ## Security

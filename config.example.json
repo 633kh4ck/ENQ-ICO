@@ -21,6 +21,7 @@
 	"ico": {
 		"useDeployed": false,
 		"address": "0x0",
+		"initialDeposit": "",
 		"args": [
 			"",
 			"0x0",
