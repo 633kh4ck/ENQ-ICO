@@ -51,9 +51,9 @@ contract ICO is Crowdsale, MintedCrowdsale, CappedCrowdsale, IndividuallyCappedC
 		_setFiatOraclizeQueryGasLimit(200000);
 		_updateFiatPrice(0);
 
-		/* _setVestingStart(_closingTime);
+		_setVestingStart(_closingTime);
 		_setVestingCliff(60);
-		_setVestingDuration(_lockup); */
+		_setVestingDuration(_lockup);
 	}
 
 	/**
