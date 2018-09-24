@@ -35,14 +35,14 @@ $ npm run migrate -- --network development # Or truffle migrate --network develo
 ## Security
 
 All code is secure and well tested, but I take no responsibility for your implementation decisions and any security problem you might experience. All contracts are WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-<!--
+
 ## Deployed instances
 
 - Ropsten
-  - Wallet [0x0](https://ropsten.etherscan.io/address/0xcafe1a77e84698c83ca8931f54a755176ef75f2c)
-  - Token [0x0](https://ropsten.etherscan.io/address/0x5894110995b8c8401bd38262ba0c8ee41d4e4658)
-  - ICO [0x0](https://ropsten.etherscan.io/address/0x7da82c7ab4771ff031b66538d2fb9b0b047f6cf9)
--->
+  - Wallet [0x5c168e6b8abe603c81884738b2584769ca791e67](https://ropsten.etherscan.io/address/0x5c168e6b8abe603c81884738b2584769ca791e67)
+  - Token [0xa477e8ab83043bbee9b19d80f9b3b7cfccc2e6be](https://ropsten.etherscan.io/address/0xa477e8ab83043bbee9b19d80f9b3b7cfccc2e6be)
+  - ICO [0xdb729378806b3108d72e1f3cc05e4ae45c137332](https://ropsten.etherscan.io/address/0xdb729378806b3108d72e1f3cc05e4ae45c137332)
+
 ## License
 
 Code released under the [AGPL v3](LICENSE).
