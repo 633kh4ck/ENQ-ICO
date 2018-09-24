@@ -1,15 +1,19 @@
 pragma solidity 0.4.24;
 
+/* solhint-disable max-line-length */
 import "openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol";
+import "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol"; // solium-disable-line max-len
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/TokenVesting.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
+/* solhint-enable max-line-length */
 
 
 /**
  * @title Vesting Crowdsale Smart Contract
  * @author GeekHack t.me/GeekHack
  */
-contract VestingCrowdsale is Ownable, Crowdsale {
+contract VestingCrowdsale is Ownable, Crowdsale, MintedCrowdsale {
 	uint256 public vestingStart;
 	uint256 public vestingCliff;
 	uint256 public vestingDuration;
@@ -151,9 +155,9 @@ contract VestingCrowdsale is Ownable, Crowdsale {
 
 	/**
 	* @dev Overrides default behaviour to modify the way in which
-	* the crowdsale ultimately sends its tokens.
+	* the crowdsale ultimately sends its tokens upon purchase.
 	* @param _beneficiary Address performing the token purchase
-	* @param _tokenAmount Number of tokens to be emitted
+	* @param _tokenAmount Number of tokens to be minted
 	*/
 	function _deliverTokens(address _beneficiary, uint256 _tokenAmount) internal {
 		address vestingWallet_ = getVestingWallet(_beneficiary);
@@ -163,6 +167,7 @@ contract VestingCrowdsale is Ownable, Crowdsale {
 			_setVestingWallet(_beneficiary, vestingWallet_);
 			emit VestingWalletCreated(_beneficiary, vestingWallet_);
 		}
-		token.safeTransfer(vestingWallet_, _tokenAmount);
+		// Potentially dangerous assumption about the type of the token.
+		MintableToken(address(token)).mint(vestingWallet_, _tokenAmount);
 	}
 }
