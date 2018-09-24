@@ -7,6 +7,9 @@ ENQ ICO is based on the ERC20 token, [OpenZeppelin framework](https://github.com
 ## Install
 
 ``` bash
+# resolve git submodules
+$ git submodule update --init --recursive
+
 # resolve multisig-wallet-gnosis dependency
 $ npm i --save gnosis/MultiSigWallet # Or fix it manually by placing code in the ../MultiSigWallet directory
 
