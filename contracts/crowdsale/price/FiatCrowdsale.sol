@@ -16,7 +16,7 @@ contract FiatCrowdsale is Ownable, Crowdsale, usingOraclize {
 	uint public fiatOraclizeQueryDelay;
 	uint256 public fiatPrice;
 	uint internal fiatOraclizeQueryGasLimit;
-	mapping(bytes32=>bool) internal fiatOraclizeQueryValidIds;
+	mapping(bytes32 => bool) internal fiatOraclizeQueryValidIds;
 
 	event FiatOraclizeQuery(uint code);
 	event FiatPriceTicker(uint price, bytes proof);

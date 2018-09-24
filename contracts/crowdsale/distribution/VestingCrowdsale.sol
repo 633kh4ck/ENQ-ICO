@@ -4,7 +4,7 @@ pragma solidity 0.4.24;
 import "openzeppelin-solidity/contracts/crowdsale/Crowdsale.sol";
 import "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol"; // solium-disable-line max-len
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "openzeppelin-solidity/contracts/token/ERC20/TokenVesting.sol";
+import "../../token/ERC20/TokenVestingWithTimeSync.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/MintableToken.sol";
 /* solhint-enable max-line-length */
 
@@ -18,7 +18,7 @@ contract VestingCrowdsale is Ownable, Crowdsale, MintedCrowdsale {
 	uint256 public vestingCliff;
 	uint256 public vestingDuration;
 	bool public vestingRevocable;
-	mapping(address=>address) public vestingWallets;
+	mapping(address => address) public vestingWallets;
 
 	event VestingWalletCreated(address beneficiary, address wallet);
 
