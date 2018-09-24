@@ -18,8 +18,8 @@ $ npm install # Or yarn install
 
 ``` bash
 # configure your infura api key & ( mnemonic || ledger )
-$ cp env.example env
-$ nano env
+$ cp env.example .env
+$ nano .env
 
 # configure your args (each network has separate config file)
 # all args are placed in order like constructors params
