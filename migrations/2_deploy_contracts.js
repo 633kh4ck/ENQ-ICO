@@ -35,12 +35,16 @@ module.exports = (deployer, network) => {
 			config.wallet.args[1],
 			config.wallet.args[2]
 		);
-	}).then(instance => {
+	})
+	.then(instance => new Promise(resolve => setTimeout(() => resolve(instance), (network == 'mainnet') ? 60000 : 100)))
+	.then(instance => {
 		config.wallet = instance;
 		console.log('Using wallet address:', config.wallet.address);
 
 		return config.token.useDeployed ? config.token : deployer.deploy(Token, config.wallet.address);
-	}).then(instance => {
+	})
+	.then(instance => new Promise(resolve => setTimeout(() => resolve(instance), (network == 'mainnet') ? 60000 : 100)))
+	.then(instance => {
 		config.token = instance;
 		console.log('Using token address:', config.token.address);
 
