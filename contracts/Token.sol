@@ -16,7 +16,7 @@ contract Token is CappedToken, PausableToken {
 	uint256 public cap = 687566880 * (10 ** uint256(decimals));
 
 	// solium-disable-next-line max-len
-	uint256 public constant INITIAL_SUPPLY = 90810720 * (10 ** uint256(decimals)); // solhint-disable-line max-line-length
+	uint256 public constant INITIAL_SUPPLY = 99901437 * (10 ** uint256(decimals)); // solhint-disable-line max-line-length
 
 	constructor(
 		address _wallet
