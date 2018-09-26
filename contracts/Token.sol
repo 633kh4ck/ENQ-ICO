@@ -13,10 +13,10 @@ contract Token is CappedToken, PausableToken {
 	string public constant symbol = "ENQ"; // solium-disable-line uppercase
 	uint8 public constant decimals = 10; // solium-disable-line uppercase
 	/* solhint-enable const-name-snakecase */
-	uint256 public cap = 123252765 * (10 ** uint256(decimals));
+	uint256 public cap = 687566880 * (10 ** uint256(decimals));
 
 	// solium-disable-next-line max-len
-	uint256 public constant INITIAL_SUPPLY = 99901437 * (10 ** uint256(decimals)); // solhint-disable-line max-line-length
+	uint256 public constant INITIAL_SUPPLY = 123252765 * (10 ** uint256(decimals)); // solhint-disable-line max-line-length
 
 	constructor(
 		address _wallet
