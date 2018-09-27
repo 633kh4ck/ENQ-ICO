@@ -65,10 +65,14 @@ module.exports = (deployer, network) => {
 		config.ico = instance;
 		console.log('Using ico address:', config.ico.address);
 		return;
-	}).then(_=> {
+	})
+	.then(_ => new Promise(resolve => setTimeout(() => resolve(''), (network == 'mainnet') ? 60000 : 100)))
+	.then(_=> {
 		console.log(`Transfer ownership of token (${config.token.address}) to ico (${config.ico.address})`);
 		Token.at(config.token.address).transferOwnership(config.ico.address);
-		
+	})
+	.then(_ => new Promise(resolve => setTimeout(() => resolve(''), (network == 'mainnet') ? 60000 : 100)))
+	.then(_=> {
 		console.log(`Transfer ownership of ico (${config.ico.address}) to wallet (${config.wallet.address})`);
 		ICO.at(config.ico.address).transferOwnership(config.wallet.address);
 	}).then(_=> {
