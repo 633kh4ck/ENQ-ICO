@@ -42,9 +42,14 @@ All code is secure and well tested, but I take no responsibility for your implem
 ## Deployed instances
 
 - Ropsten
-  - Wallet [0x5c168e6b8abe603c81884738b2584769ca791e67](https://ropsten.etherscan.io/address/0x5c168e6b8abe603c81884738b2584769ca791e67)
-  - Token [0xa477e8ab83043bbee9b19d80f9b3b7cfccc2e6be](https://ropsten.etherscan.io/address/0xa477e8ab83043bbee9b19d80f9b3b7cfccc2e6be)
-  - ICO [0xdb729378806b3108d72e1f3cc05e4ae45c137332](https://ropsten.etherscan.io/address/0xdb729378806b3108d72e1f3cc05e4ae45c137332)
+  - Wallet [0x5C168e6b8abE603C81884738B2584769ca791e67](https://ropsten.etherscan.io/address/0x5c168e6b8abe603c81884738b2584769ca791e67)
+  - Token [0xA477E8aB83043bBEE9b19D80F9b3B7CFcCc2E6BE](https://ropsten.etherscan.io/address/0xa477e8ab83043bbee9b19d80f9b3b7cfccc2e6be)
+  - ICO [0xdB729378806B3108D72E1f3cC05e4AE45c137332](https://ropsten.etherscan.io/address/0xdb729378806b3108d72e1f3cc05e4ae45c137332)
+- Mainnet
+  - Wallet [0xDf26369B419013cBa54Eb859dafF6F8bC167618B](https://etherscan.io/address/0xdf26369b419013cba54eb859daff6f8bc167618b)
+  - Token [0x16EA01aCB4b0Bca2000ee5473348B6937ee6f72F](https://etherscan.io/address/0x16ea01acb4b0bca2000ee5473348b6937ee6f72f)
+  - ICO [0x4dDDA3157CF37327539a18BC844C6DE887BA2573](https://etherscan.io/address/0x4ddda3157cf37327539a18bc844c6de887ba2573)
+  - ICO [0x69cda6099f211e608638964466d4Ca65Cd6bf993](https://etherscan.io/address/0x69cda6099f211e608638964466d4ca65cd6bf993)
 
 ## License
 
