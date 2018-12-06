@@ -50,6 +50,7 @@ All code is secure and well tested, but I take no responsibility for your implem
   - Token [0x16EA01aCB4b0Bca2000ee5473348B6937ee6f72F](https://etherscan.io/address/0x16ea01acb4b0bca2000ee5473348b6937ee6f72f)
   - ICO (stage 1) [0x4dDDA3157CF37327539a18BC844C6DE887BA2573](https://etherscan.io/address/0x4ddda3157cf37327539a18bc844c6de887ba2573)
   - ICO (stage 2) [0x69cda6099f211e608638964466d4Ca65Cd6bf993](https://etherscan.io/address/0x69cda6099f211e608638964466d4ca65cd6bf993)
+  - ICO (stage 3) [0x4423ed14539d9fE254dFA199Cf97008531543ab1](https://etherscan.io/address/0x4423ed14539d9fE254dFA199Cf97008531543ab1)
 
 ## License
 
