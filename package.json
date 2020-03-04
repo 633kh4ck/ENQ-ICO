@@ -3,7 +3,7 @@
   "version": "1.2.2",
   "description": "ENQ ICO Smart Contracts",
   "author": "GeekHack",
-  "license": "AGPL-3.0-or-later",
+  "license": "AGPL-3.0",
   "main": "truffle-config.js",
   "scripts": {
     "lint": "./node_modules/.bin/solium -d contracts",
@@ -14,7 +14,7 @@
     "console": "./node_modules/.bin/truffle console",
     "migrate": "./node_modules/.bin/truffle migrate",
     "debug": "./node_modules/.bin/truffle debug",
-    "bridge": "./node_modules/.bin/ethereum-bridge -H localhost:8545 -a 1",
+    "bridge": "./node_modules/.bin/ethereum-bridge -H 127.0.0.1:8545 -a 1",
     "build": "./node_modules/.bin/sol-merger \"./contracts/*.sol\" ./build/dist",
     "build:clean": "rm -rf ./build/*",
     "postinstall": "npm audit fix"
