@@ -2,7 +2,7 @@ ENQ ICO Smart Contracts [![No Maintenance Intended](http://unmaintained.tech/bad
 ===================
 
 **`NOTICE`**
-Codebase is no longer maintained, this repository has been preserved for research purposes only; the code may use not relevant approaches, so don't use "as is" (without adaptation), it can lead to security violations; most of the arguments presented below was actual only at the time of project formation.
+Codebase is outdated and no longer maintained, this repository has been preserved for research purposes only; irrelevant approaches may be presented, so don't use "as is" (without adaptation), it can lead to security violations; most of the arguments provided below were actual only at the time of project formation.
 
 ---
 
