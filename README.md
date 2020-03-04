@@ -1,5 +1,11 @@
-ENQ ICO Smart Contracts
+ENQ ICO Smart Contracts [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 ===================
+
+**`NOTICE`**
+Codebase is no longer maintained, this repository has been preserved for research purposes only; the code may use not relevant approaches, so don't use "as is" (without adaptation), it can lead to security violations; most of the arguments presented below was actual only at the time of project formation.
+
+---
+
 ENQ ICO is based on the ERC20 token, [OpenZeppelin framework](https://github.com/OpenZeppelin/openzeppelin-solidity), [MultiSig Wallet (by Gnosis)](https://github.com/gnosis/MultiSigWallet) and some utilitarian contracts. All contracts use the latest stable version of the Solidity language (except dependencies, which we can't control) and have passed internal tests and audits.
 
 ![ENQ](https://raw.githubusercontent.com/633kh4ck/ENQ-ICO/master/docs/diagram.png)
@@ -37,7 +43,7 @@ $ npm run migrate -- --network development # Or truffle migrate --network develo
 
 ## Security
 
-All code is secure and well tested, but I take no responsibility for your implementation decisions and any security problem you might experience. All contracts are WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+All code is safe enough and [battle-tested](https://medium.com/@ENQBlockchain/enecuum-bounty-program-welcomes-you-bug-hunter-66d05aba76f7), but I take no responsibility for your implementation decisions and any security problem you might experience. All contracts are WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ## Deployed instances
 
